@@ -30,7 +30,7 @@ exports.handleBillingAlert = onMessagePublished(
 
     const budgetExceeded = eventData.costAmount >= eventData.budgetAmount;
     if (
-      !budgetExceeded &&
+      !budgetExceeded ||
       eventData.costAmount - lastReportedCost < MIN_COST_DIFF_FOR_ALERT
     )
       return;
